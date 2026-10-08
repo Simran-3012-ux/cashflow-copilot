@@ -1,0 +1,408 @@
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --text: #1c2430;
+  --muted: #5f6b7a;
+  --border: #dde2e9;
+  --accent: #0f766e;
+  --accent-hover: #0b5a54;
+  --good: #15803d;
+  --bad: #b91c1c;
+  --high: #b91c1c;
+  --medium: #b45309;
+  --low: #1d4ed8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #11161d;
+    --surface: #1a212b;
+    --text: #e8ecf1;
+    --muted: #9aa6b5;
+    --border: #2b3441;
+    --accent: #2dd4bf;
+    --accent-hover: #5eead4;
+    --good: #4ade80;
+    --bad: #f87171;
+    --high: #f87171;
+    --medium: #fbbf24;
+    --low: #60a5fa;
+  }
+}
+
+[hidden] {
+  display: none !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.tagline {
+  margin: 4px 0 24px;
+  color: var(--muted);
+}
+
+h2 {
+  margin: 32px 0 12px;
+  font-size: 1.15rem;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+input[type="number"] {
+  padding: 10px 12px;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  width: 180px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  button {
+    color: #062b27;
+  }
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.status {
+  min-height: 1.5em;
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.status.error {
+  color: var(--bad);
+}
+
+/* Metric cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.card .label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.card .value {
+  margin: 4px 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.card .value.good {
+  color: var(--good);
+}
+
+.card .value.bad {
+  color: var(--bad);
+}
+
+/* Alerts */
+.alerts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left-width: 5px;
+  border-radius: 8px;
+}
+
+.alert.high { border-left-color: var(--high); }
+.alert.medium { border-left-color: var(--medium); }
+.alert.low { border-left-color: var(--low); }
+
+.badge {
+  flex-shrink: 0;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+.alert.high .badge { color: var(--high); }
+.alert.medium .badge { color: var(--medium); }
+.alert.low .badge { color: var(--low); }
+
+.alert p {
+  margin: 0;
+}
+
+.no-alerts {
+  padding: 16px;
+  color: var(--good);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* Monthly income vs expenses chart */
+.legend {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+  border-radius: 50%;
+}
+
+.dot.income { background: var(--good); }
+.dot.expenses { background: var(--bad); }
+
+.monthly-chart {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.month-group {
+  flex: 1;
+  min-width: 90px;
+  text-align: center;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 8px;
+  height: 220px;
+  border-bottom: 1px solid var(--border);
+}
+
+.bar {
+  width: 32px;
+  min-height: 2px;
+  border-radius: 4px 4px 0 0;
+}
+
+.bar.income { background: var(--good); }
+.bar.expenses { background: var(--bad); }
+
+.month-label {
+  margin: 8px 0 2px;
+  font-weight: 600;
+}
+
+.month-values {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.month-values.good { color: var(--good); }
+.month-values.bad { color: var(--bad); }
+
+/* Spending by category */
+.category-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.cat-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 130px;
+  align-items: center;
+  gap: 12px;
+}
+
+.cat-name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.cat-track {
+  height: 12px;
+  background: var(--bg);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.cat-fill {
+  height: 100%;
+  min-width: 4px;
+  background: var(--accent);
+  border-radius: 6px;
+}
+
+.cat-amount {
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+@media (max-width: 520px) {
+  .cat-row {
+    grid-template-columns: 1fr auto;
+  }
+  .cat-track {
+    grid-column: 1 / -1;
+    order: 3;
+  }
+}
+
+/* CSV upload */
+button.secondary {
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent);
+}
+
+button.secondary:hover {
+  background: var(--bg);
+}
+
+input[type="file"] {
+  max-width: 260px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.hint {
+  margin: 12px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.hint a {
+  color: var(--accent);
+}
+
+.warnings {
+  margin: 4px 0 0;
+  padding-left: 20px;
+  font-size: 0.85rem;
+  color: var(--medium);
+}
+
+/* Insights */
+.insights {
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.insights-summary {
+  margin: 0 0 12px;
+}
+
+.insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.insights-source {
+  margin: 12px 0 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.insights-loading {
+  margin: 0;
+  color: var(--muted);
+}

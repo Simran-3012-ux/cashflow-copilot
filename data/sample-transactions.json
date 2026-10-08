@@ -1,0 +1,23 @@
+[
+  { "date": "2026-07-01", "description": "Monthly rent", "category": "Rent", "amount": -1200 },
+  { "date": "2026-07-05", "description": "Coffee and pastry sales", "category": "Sales", "amount": 3200 },
+  { "date": "2026-07-12", "description": "Coffee and pastry sales", "category": "Sales", "amount": 3400 },
+  { "date": "2026-07-15", "description": "Bean supplier invoice", "category": "Supplies", "amount": -850 },
+  { "date": "2026-07-20", "description": "Staff salaries", "category": "Payroll", "amount": -2800 },
+  { "date": "2026-07-25", "description": "Electricity bill", "category": "Utilities", "amount": -180 },
+
+  { "date": "2026-08-01", "description": "Monthly rent", "category": "Rent", "amount": -1200 },
+  { "date": "2026-08-06", "description": "Coffee and pastry sales", "category": "Sales", "amount": 3300 },
+  { "date": "2026-08-14", "description": "Bean supplier invoice", "category": "Supplies", "amount": -870 },
+  { "date": "2026-08-14", "description": "Bean supplier invoice", "category": "Supplies", "amount": -870 },
+  { "date": "2026-08-20", "description": "Staff salaries", "category": "Payroll", "amount": -2800 },
+  { "date": "2026-08-22", "description": "Office catering order", "category": "Sales", "amount": 1500 },
+
+  { "date": "2026-09-01", "description": "Monthly rent", "category": "Rent", "amount": -1200 },
+  { "date": "2026-09-05", "description": "Coffee and pastry sales", "category": "Sales", "amount": 2100 },
+  { "date": "2026-09-12", "description": "Espresso machine repair", "category": "Maintenance", "amount": -2400 },
+  { "date": "2026-09-15", "description": "Bean supplier invoice", "category": "Supplies", "amount": -900 },
+  { "date": "2026-09-20", "description": "Staff salaries", "category": "Payroll", "amount": -2800 },
+  { "date": "2026-09-25", "description": "Social media ads", "category": "Marketing", "amount": -600 },
+  { "date": "2026-09-28", "description": "Electricity bill", "category": "Utilities", "amount": -210 }
+]

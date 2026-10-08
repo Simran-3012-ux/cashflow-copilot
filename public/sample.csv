@@ -1,0 +1,20 @@
+date,description,category,amount
+2026-07-01,Monthly rent,Rent,-1200
+2026-07-05,Coffee and pastry sales,Sales,3200
+2026-07-12,Coffee and pastry sales,Sales,3400
+2026-07-15,Bean supplier invoice,Supplies,-850
+2026-07-20,Staff salaries,Payroll,-2800
+2026-07-25,Electricity bill,Utilities,-180
+2026-08-01,Monthly rent,Rent,-1200
+2026-08-06,Coffee and pastry sales,Sales,3300
+2026-08-14,Bean supplier invoice,Supplies,-870
+2026-08-14,Bean supplier invoice,Supplies,-870
+2026-08-20,Staff salaries,Payroll,-2800
+2026-08-22,"Office catering order, 20 people",Sales,1500
+2026-09-01,Monthly rent,Rent,-1200
+2026-09-05,Coffee and pastry sales,Sales,2100
+2026-09-12,Espresso machine repair,Maintenance,-2400
+2026-09-15,Bean supplier invoice,Supplies,-900
+2026-09-20,Staff salaries,Payroll,-2800
+2026-09-25,Social media ads,Marketing,-600
+2026-09-28,Electricity bill,Utilities,-210

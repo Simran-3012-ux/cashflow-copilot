@@ -1,0 +1,6 @@
+Date,Description,Category,Amount
+2026-10-01,Rent,Rent,-1200
+2026-10-05,"Sales, weekend",Sales,"$3,400.50"
+not-a-date,Mystery,Other,-50
+2026-10-09,Supplies,Supplies,abc
+2026-10-12,Utilities,Utilities,(180)
